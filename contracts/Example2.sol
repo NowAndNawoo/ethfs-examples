@@ -18,7 +18,7 @@ contract Example2 is ERC721, Ownable {
     IFileStore public fileStore;
     mapping(uint256 => TokenData) private tokenData;
 
-    constructor(IFileStore _fileStore) ERC721("Example1", "EFSE1") {
+    constructor(IFileStore _fileStore) ERC721("Example2", "EFSE2") {
         fileStore = _fileStore;
     }
 

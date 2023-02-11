@@ -17,11 +17,11 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    // hardhat: {
-    //   forking: {
-    //     url: process.env.GOERLI_URL || '',
-    //   },
-    // },
+    hardhat: {
+      forking: {
+        url: process.env.GOERLI_URL || '',
+      },
+    },
     ethereum: {
       url: process.env.ETHEREUM_URL || '',
       accounts,

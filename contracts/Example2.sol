@@ -14,7 +14,7 @@ struct TokenData {
     string filename;
 }
 
-contract Example1 is ERC721, Ownable {
+contract Example2 is ERC721, Ownable {
     IFileStore public fileStore;
     mapping(uint256 => TokenData) private tokenData;
 
@@ -47,7 +47,7 @@ contract Example1 is ERC721, Ownable {
             '","description":"',
             token.description,
             '","image":"data:image/jpeg;base64,',
-            fileStore.getFile(token.filename).read(),
+            Base64.encode(bytes(fileStore.getFile(token.filename).read())),
             '"}'
         );
         return string.concat("data:application/json;base64,", Base64.encode(bytes(json)));
